@@ -1,2 +1,2 @@
-# react-rock-bottom
-This repo contains all the theories and practicals related to the React.
+# React Rock Bottom
+This repo contains all the theories related to the React.
