@@ -4,7 +4,7 @@
   "description": "",
   "main": "react-component.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile-jsx": "npx babel --watch src --out-dir . --presets react-app/prod"
   },
   "keywords": [],
   "author": "",
