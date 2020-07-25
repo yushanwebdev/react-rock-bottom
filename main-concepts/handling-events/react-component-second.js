@@ -6,42 +6,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Toggle = function (_React$Component) {
-  _inherits(Toggle, _React$Component);
+var LoggingButton = function (_React$Component) {
+  _inherits(LoggingButton, _React$Component);
 
-  function Toggle(props) {
-    _classCallCheck(this, Toggle);
+  function LoggingButton() {
+    _classCallCheck(this, LoggingButton);
 
-    var _this = _possibleConstructorReturn(this, (Toggle.__proto__ || Object.getPrototypeOf(Toggle)).call(this, props));
-
-    _this.state = { isToggleOn: true };
-
-    // This binding is necessary to make `this` work in the callback
-    _this.handleClick = _this.handleClick.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (LoggingButton.__proto__ || Object.getPrototypeOf(LoggingButton)).apply(this, arguments));
   }
 
-  _createClass(Toggle, [{
+  _createClass(LoggingButton, [{
     key: 'handleClick',
     value: function handleClick() {
-      this.setState(function (state) {
-        return {
-          isToggleOn: !state.isToggleOn
-        };
-      });
+      console.log('this is:', this);
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      // This syntax ensures `this` is bound within handleClick
       return React.createElement(
         'button',
-        { onClick: this.handleClick },
-        this.state.isToggleOn ? 'ON' : 'OFF'
+        { onClick: function onClick() {
+            return _this2.handleClick();
+          } },
+        'Click me'
       );
     }
   }]);
 
-  return Toggle;
+  return LoggingButton;
 }(React.Component);
-
-ReactDOM.render(React.createElement(Toggle, null), document.getElementById('root'));
