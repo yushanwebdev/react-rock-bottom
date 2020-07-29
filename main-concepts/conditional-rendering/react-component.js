@@ -29,13 +29,13 @@ function Greeting(props) {
       null,
       'Welcome back!'
     );
-  } else {
-    return React.createElement(
-      'h1',
-      null,
-      'Please sign up.'
-    );
   }
+
+  return React.createElement(
+    'h1',
+    null,
+    'Please sign up.'
+  );
 }
 
 var LoginControl = function (_React$Component) {
